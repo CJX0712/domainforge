@@ -1,0 +1,270 @@
+{
+  "rows": [
+    {
+      "dataset": "covariate_shift",
+      "method": "source_only",
+      "accuracy": 0.526471,
+      "macro_f1": 0.344894,
+      "mmd2": 114.529692,
+      "fit_seconds": 0.0877,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "covariate_shift",
+      "method": "coral",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "mmd2": 142.075765,
+      "fit_seconds": 0.0109,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "covariate_shift",
+      "method": "tca",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "mmd2": 0.000225,
+      "fit_seconds": 0.1438,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "covariate_shift",
+      "method": "jda",
+      "accuracy": 0.997059,
+      "macro_f1": 0.99705,
+      "mmd2": 0.03299,
+      "fit_seconds": 0.4393,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "covariate_shift",
+      "method": "kliep",
+      "accuracy": 0.961765,
+      "macro_f1": 0.961756,
+      "mmd2": 20.91148,
+      "fit_seconds": 0.0172,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "covariate_shift",
+      "method": "safuse",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "mmd2": 142.075765,
+      "fit_seconds": 8.0425,
+      "status": "ok",
+      "detail": "ensemble"
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "source_only",
+      "accuracy": 0.641176,
+      "macro_f1": 0.61148,
+      "mmd2": 0.482508,
+      "fit_seconds": 0.0102,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "coral",
+      "accuracy": 0.635294,
+      "macro_f1": 0.635244,
+      "mmd2": 1.049653,
+      "fit_seconds": 0.0099,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "tca",
+      "accuracy": 0.673529,
+      "macro_f1": 0.673527,
+      "mmd2": 0.004835,
+      "fit_seconds": 0.1315,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "jda",
+      "accuracy": 0.638235,
+      "macro_f1": 0.638082,
+      "mmd2": 0.00582,
+      "fit_seconds": 0.4863,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "kliep",
+      "accuracy": 0.632353,
+      "macro_f1": 0.59677,
+      "mmd2": 0.410063,
+      "fit_seconds": 0.0206,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "rotated_moons",
+      "method": "safuse",
+      "accuracy": 0.714706,
+      "macro_f1": 0.714585,
+      "mmd2": 1.049653,
+      "fit_seconds": 9.8161,
+      "status": "ok",
+      "detail": "fallback_best_single"
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "source_only",
+      "accuracy": 0.480952,
+      "macro_f1": 0.470641,
+      "mmd2": 9.758003,
+      "fit_seconds": 0.0126,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "coral",
+      "accuracy": 0.997619,
+      "macro_f1": 0.997381,
+      "mmd2": 36.187039,
+      "fit_seconds": 0.0123,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "tca",
+      "accuracy": 0.516667,
+      "macro_f1": 0.486338,
+      "mmd2": 0.015984,
+      "fit_seconds": 0.1988,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "jda",
+      "accuracy": 0.342857,
+      "macro_f1": 0.23692,
+      "mmd2": 0.01433,
+      "fit_seconds": 0.6423,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "kliep",
+      "accuracy": 0.707143,
+      "macro_f1": 0.72571,
+      "mmd2": 2.068478,
+      "fit_seconds": 0.0176,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "scaled_blobs",
+      "method": "safuse",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "mmd2": 36.187039,
+      "fit_seconds": 14.0203,
+      "status": "ok",
+      "detail": "ensemble"
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "source_only",
+      "accuracy": 0.294118,
+      "macro_f1": 0.154164,
+      "mmd2": 655.002281,
+      "fit_seconds": 0.0287,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "coral",
+      "accuracy": 0.997059,
+      "macro_f1": 0.996808,
+      "mmd2": 0.09656,
+      "fit_seconds": 0.0267,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "tca",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "mmd2": 0.000289,
+      "fit_seconds": 0.1866,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "jda",
+      "accuracy": 0.964706,
+      "macro_f1": 0.962597,
+      "mmd2": 0.000361,
+      "fit_seconds": 0.6089,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "kliep",
+      "accuracy": 0.95,
+      "macro_f1": 0.953476,
+      "mmd2": 16.979961,
+      "fit_seconds": 0.0411,
+      "status": "ok",
+      "detail": ""
+    },
+    {
+      "dataset": "label_shift_digits",
+      "method": "safuse",
+      "accuracy": 0.997059,
+      "macro_f1": 0.996434,
+      "mmd2": 0.09656,
+      "fit_seconds": 8.4391,
+      "status": "ok",
+      "detail": "ensemble"
+    }
+  ],
+  "aggregate": {
+    "source_only": {
+      "mean_acc": 0.4856792717086835,
+      "mean_f1": 0.3952946214451031
+    },
+    "coral": {
+      "mean_acc": 0.9074929971988795,
+      "mean_f1": 0.9073582593845844
+    },
+    "tca": {
+      "mean_acc": 0.7975490196078432,
+      "mean_f1": 0.7899662270873724
+    },
+    "jda": {
+      "mean_acc": 0.7357142857142858,
+      "mean_f1": 0.7086622419664123
+    },
+    "kliep": {
+      "mean_acc": 0.8128151260504202,
+      "mean_f1": 0.8094282041385905
+    },
+    "safuse": {
+      "mean_acc": 0.9279411764705883,
+      "mean_f1": 0.9277548217090469
+    }
+  }
+}

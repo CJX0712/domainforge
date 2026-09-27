@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "domainforge"
+version = "0.1.0"
+description = "Modular domain adaptation system: CORAL/TCA/JDA/KLIEP + SAFuse fusion flagship (author: 晨星)"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scipy>=1.11", "scikit-learn>=1.4", "optuna>=3.6"]
+authors = [{ name = "晨星" }]
+
+[project.optional-dependencies]
+adapt = ["adapt>=0.4"]
+
+[tool.setuptools.packages.find]
+include = ["domainforge*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+markers = ["slow: long-running end-to-end tests"]
+
+[tool.ruff]
+line-length = 96
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP"]
+ignore = ["N802", "N803", "N806", "N811", "B008", "B017", "B905"]
