@@ -90,7 +90,9 @@ class JdaAdapter:
             eps = 1e-8 * np.trace(KHK) / n
             k = int(min(self.n_components, n - 1))
             _w, V = eigh(
-                KMK + self.mu * np.eye(n), KHK + eps * np.eye(n), subset_by_index=[0, k - 1]
+                KMK + self.mu * np.eye(n),
+                KHK + eps * np.eye(n),
+                subset_by_index=[0, k - 1],
             )
             self._W = V
             emb = K @ V
