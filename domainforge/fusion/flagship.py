@@ -102,8 +102,7 @@ class SafuseAdapter:
             [
                 (n, m, g)
                 for n, m, g in fitted_members
-                if g > 0
-                and self.member_val_acc_.get(n, 0.0) >= best_val - self.survivor_tol
+                if g > 0 and self.member_val_acc_.get(n, 0.0) >= best_val - self.survivor_tol
             ],
             key=lambda t: self.member_val_acc_.get(t[0], 0.0),
             reverse=True,
@@ -140,11 +139,7 @@ class SafuseAdapter:
         parts: list[tuple[np.ndarray, np.ndarray, float]] = []
         for _name, m, w in self._fitted:
             p = np.asarray(m.predict_proba(X))
-            cls = (
-                np.asarray(m.classes_)
-                if hasattr(m, "classes_")
-                else np.arange(p.shape[1])
-            )
+            cls = np.asarray(m.classes_) if hasattr(m, "classes_") else np.arange(p.shape[1])
             parts.append((p, cls, w))
             union = cls if union is None else np.union1d(union, cls)
         assert union is not None
