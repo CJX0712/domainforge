@@ -24,9 +24,7 @@ def check_and_stack(split: DomainSplit) -> tuple[np.ndarray, np.ndarray]:
         raise InvalidDataError("source/target feature dims differ")
     return (
         np.vstack([split.X_source, split.X_target]),
-        np.concatenate(
-            [np.zeros(split.X_source.shape[0]), np.ones(split.X_target.shape[0])]
-        ),
+        np.concatenate([np.zeros(split.X_source.shape[0]), np.ones(split.X_target.shape[0])]),
     )
 
 
