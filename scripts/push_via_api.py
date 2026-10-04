@@ -26,18 +26,14 @@ def gh(*args: str, input_text: str | None = None) -> dict:
     # `--input -` with an EMPTY body makes GitHub 404 GETs (verified); only
     # attach a stdin body when there actually is one
     cmd = (
-        ["gh", "api", "--input", "-", *args]
-        if input_text is not None
-        else ["gh", "api", *args]
+        ["gh", "api", "--input", "-", *args] if input_text is not None else ["gh", "api", *args]
     )
     for attempt in range(6):
         r = subprocess.run(
             cmd, capture_output=True, text=True, input=input_text, encoding="utf-8"
         )
         err = (r.stderr or "") + (r.stdout or "")
-        transient = any(
-            k in err for k in ("502", "503", "Bad Gateway", "reset", "timed out")
-        )
+        transient = any(k in err for k in ("502", "503", "Bad Gateway", "reset", "timed out"))
         not_found_yet = (
             "404" in err
             and attempt < 5
@@ -142,9 +138,7 @@ def main() -> int:
                 }
             ),
         )
-        tree_items.append(
-            {"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]}
-        )
+        tree_items.append({"path": path, "mode": "100644", "type": "blob", "sha": blob["sha"]})
         if (i + 1) % 10 == 0:
             print(f"  blobs {i + 1}/{len(files)}")
 
