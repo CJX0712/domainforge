@@ -10,7 +10,16 @@ class TestCli:
         monkeypatch.setenv("ENV_DOMAINFORGE_HPO_TRIALS", "2")
         out = tmp_path / "bench.json"
         rc = main(
-            ["benchmark", "--out", str(out), "--seed", "5", "--methods", "source_only", "coral"]
+            [
+                "benchmark",
+                "--out",
+                str(out),
+                "--seed",
+                "5",
+                "--methods",
+                "source_only",
+                "coral",
+            ]
         )
         assert rc == 0
         assert out.exists()
