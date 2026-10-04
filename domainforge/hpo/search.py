@@ -39,7 +39,10 @@ def _suggest(trial: optuna.Trial, name: str, spec: tuple) -> float | int:
 
 
 def hpo_method(
-    method_name: str, split: DomainSplit, n_trials: int | None = None, seed: int | None = None
+    method_name: str,
+    split: DomainSplit,
+    n_trials: int | None = None,
+    seed: int | None = None,
 ) -> tuple[dict, float]:
     """Run TPE over the method's space; return (best_params, best_val_acc).
 
