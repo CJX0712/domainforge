@@ -24,7 +24,11 @@ class KliepAdapter:
     name = "kliep"
 
     def __init__(
-        self, disc_C: float = 1.0, clip_hi: float = 8.0, clf_C: float = 1.0, seed: int = 42
+        self,
+        disc_C: float = 1.0,
+        clip_hi: float = 8.0,
+        clf_C: float = 1.0,
+        seed: int = 42,
     ) -> None:
         self.disc_C = disc_C
         self.clip_hi = clip_hi
