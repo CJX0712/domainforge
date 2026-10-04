@@ -13,7 +13,10 @@ from domainforge.core.errors import UnknownMethodError
 
 
 def build_method(
-    name: str, params: dict[str, Any] | None = None, seed: int = 42, optional: bool = False
+    name: str,
+    params: dict[str, Any] | None = None,
+    seed: int = 42,
+    optional: bool = False,
 ):
     params = dict(params or {})
     if name == "source_only":
