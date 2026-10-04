@@ -75,7 +75,9 @@ def make_rotated_moons(
     Xt = (Xt * 2.0 + rng.normal(scale=0.05, size=Xt.shape)) @ R.T
 
     Xv, yv, Xte, yte = _val_sample(Xt, yt, n_val, rng)
-    return DomainSplit("rotated_moons", Xs, ys, Xte, yte, Xv, yv, meta={"angle_deg": angle_deg})
+    return DomainSplit(
+        "rotated_moons", Xs, ys, Xte, yte, Xv, yv, meta={"angle_deg": angle_deg}
+    )
 
 
 def make_scaled_blobs(
@@ -97,10 +99,14 @@ def make_scaled_blobs(
     Xt = (centers[yt] + rng.normal(scale=sep + 0.3, size=(n_t, d))) * scales + off
 
     Xv, yv, Xte, yte = _val_sample(Xt, yt, n_val, rng)
-    return DomainSplit("scaled_blobs", Xs, ys, Xte, yte, Xv, yv, meta={"scales": scales})
+    return DomainSplit(
+        "scaled_blobs", Xs, ys, Xte, yte, Xv, yv, meta={"scales": scales}
+    )
 
 
-def make_label_shift_digits(n_val: int = 20, seed: int = 42, tilt: float = 2.5) -> DomainSplit:
+def make_label_shift_digits(
+    n_val: int = 20, seed: int = 42, tilt: float = 2.5
+) -> DomainSplit:
     """Digits (classes 0..4, 8x8 -> 32 dims via downsample-free flatten of 8x8).
 
     Target reweights class proportions with a Dirichlet-style tilt (label
@@ -133,12 +139,16 @@ def make_label_shift_digits(n_val: int = 20, seed: int = 42, tilt: float = 2.5) 
     Xt_parts, yt_parts = [], []
     for cls in range(5):
         pool = X_all[y_all == cls]
-        idx = rng.choice(pool.shape[0], size=min(counts[cls], pool.shape[0]), replace=False)
+        idx = rng.choice(
+            pool.shape[0], size=min(counts[cls], pool.shape[0]), replace=False
+        )
         Xt_parts.append(pool[idx])
         yt_parts.append(np.full(idx.shape[0], cls))
     # covariate nuisance on target: pixel noise + brightness shift
     Xt = np.clip(
-        np.vstack(Xt_parts) + rng.normal(scale=0.08, size=(sum(counts), X_all.shape[1])) + 0.03,
+        np.vstack(Xt_parts)
+        + rng.normal(scale=0.08, size=(sum(counts), X_all.shape[1]))
+        + 0.03,
         0.0,
         None,
     )
@@ -146,7 +156,14 @@ def make_label_shift_digits(n_val: int = 20, seed: int = 42, tilt: float = 2.5) 
 
     Xv, yv, Xte, yte = _val_sample(Xt, yt, n_val, rng)
     return DomainSplit(
-        "label_shift_digits", Xs, ys, Xte, yte, Xv, yv, meta={"priors_target": priors.tolist()}
+        "label_shift_digits",
+        Xs,
+        ys,
+        Xte,
+        yte,
+        Xv,
+        yv,
+        meta={"priors_target": priors.tolist()},
     )
 
 
