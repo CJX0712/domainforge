@@ -8,7 +8,13 @@ from domainforge.core.errors import UnknownMethodError
 from domainforge.data.synthetic import make_covariate_shift
 from domainforge.fusion.flagship import SafuseAdapter
 from domainforge.hpo.search import hpo_method
-from domainforge.pipeline.pipeline import aggregate, benchmark, format_table, run, save_rows
+from domainforge.pipeline.pipeline import (
+    aggregate,
+    benchmark,
+    format_table,
+    run,
+    save_rows,
+)
 from domainforge.registry import build_method
 
 SPLIT = make_covariate_shift(seed=13)
