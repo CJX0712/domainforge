@@ -85,7 +85,9 @@ def run(
         )
 
 
-def run_optional_row(split: DomainSplit, method_name: str, seed: int = 42) -> BenchmarkRow:
+def run_optional_row(
+    split: DomainSplit, method_name: str, seed: int = 42
+) -> BenchmarkRow:
     """Optional-backend row: unavailable -> skipped (honest placeholder)."""
     if method_name in OPTIONAL_METHODS and not available_adapt():
         return BenchmarkRow(
@@ -133,7 +135,9 @@ def aggregate(rows: list[BenchmarkRow]) -> dict[str, dict[str, float]]:
 def format_table(rows: list[BenchmarkRow]) -> str:
     """Fixed-width table (SOP: never rely on CJK-width auto alignment)."""
     header = ["dataset", "method", "acc", "macro_f1", "mmd2", "sec", "status"]
-    lines = [" ".join(f"{h:<18}" if i == 0 else f"{h:<12}" for i, h in enumerate(header))]
+    lines = [
+        " ".join(f"{h:<18}" if i == 0 else f"{h:<12}" for i, h in enumerate(header))
+    ]
     for r in rows:
         cells = [
             r.dataset,
