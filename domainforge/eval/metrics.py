@@ -16,12 +16,8 @@ def linear_mmd2(Xs: np.ndarray, Xt: np.ndarray) -> float:
     """Unbiased linear MMD^2 = mean(K_ss) + mean(K_tt) - 2*mean(K_st) on
     linear kernel (cheap, deterministic)."""
     ns, nt = Xs.shape[0], Xt.shape[0]
-    sub_s = (
-        Xs if ns <= 400 else Xs[np.random.default_rng(0).choice(ns, 400, replace=False)]
-    )
-    sub_t = (
-        Xt if nt <= 400 else Xt[np.random.default_rng(1).choice(nt, 400, replace=False)]
-    )
+    sub_s = Xs if ns <= 400 else Xs[np.random.default_rng(0).choice(ns, 400, replace=False)]
+    sub_t = Xt if nt <= 400 else Xt[np.random.default_rng(1).choice(nt, 400, replace=False)]
     Kss = sub_s @ sub_s.T
     Ktt = sub_t @ sub_t.T
     Kst = sub_s @ sub_t.T
