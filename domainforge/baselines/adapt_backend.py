@@ -47,7 +47,11 @@ class AdaptCoralBackend:
         from sklearn.svm import SVC
 
         est = SVC(
-            C=self.clf_C, kernel="rbf", gamma="scale", probability=True, random_state=self.seed
+            C=self.clf_C,
+            kernel="rbf",
+            gamma="scale",
+            probability=True,
+            random_state=self.seed,
         )
         self._model = CORAL(estimator=est, Xt=split.X_target, verbose=0)
         t0 = time.perf_counter()
