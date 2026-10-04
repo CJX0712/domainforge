@@ -20,7 +20,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="domainforge", description="DomainForge: 域自适应系统"
     )
-    parser.add_argument("--version", action="version", version=f"domainforge {__version__}")
+    parser.add_argument(
+        "--version", action="version", version=f"domainforge {__version__}"
+    )
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     sub.add_parser("demo", help="run the end-to-end synthetic benchmark")
@@ -38,7 +40,9 @@ def main(argv: list[str] | None = None) -> int:
     seed = CONFIG.seed if args.cmd in ("demo",) else getattr(args, "seed", None)
 
     if args.cmd == "demo":
-        rows = benchmark(make_all(n_target_val=CONFIG.n_target_val, seed=CONFIG.seed), ("all",))
+        rows = benchmark(
+            make_all(n_target_val=CONFIG.n_target_val, seed=CONFIG.seed), ("all",)
+        )
         print(format_table(rows))
         agg = aggregate(rows)
         print("\n== aggregate (mean over 4 datasets) ==")
