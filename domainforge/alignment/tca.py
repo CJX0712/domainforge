@@ -31,7 +31,11 @@ class TcaAdapter:
     name = "tca"
 
     def __init__(
-        self, n_components: int = 16, mu: float = 1e-2, clf_C: float = 1.0, seed: int = 42
+        self,
+        n_components: int = 16,
+        mu: float = 1e-2,
+        clf_C: float = 1.0,
+        seed: int = 42,
     ) -> None:
         self.n_components = n_components
         self.mu = mu
